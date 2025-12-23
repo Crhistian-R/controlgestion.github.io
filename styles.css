@@ -1,15 +1,88 @@
+/* Reseteo básico y estilo general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  background: #f9f9f9;
+  color: #333;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 20px;
+h1, h2 {
+  font-weight: 700;
 }
 
-nav ul {
-  list-style: none;
+/* Barra de navegación */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #004d00, #006400);
+  color: white;
+  padding: 10px 20px;
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.navbar-logo h1 {
+  font-size: 1.8rem;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: background 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background: #005200;
+  border-radius: 4px;
+}
+
+/* Secciones */
+main {
+  margin-top: 80px; /* Para evitar que el contenido quede cubierto por la navbar */
+  padding: 20px;
+}
+
+.section {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: scale(1.02);
+}
+
+/* Diseño de footer */
+footer {
+  text-align: center;
+  background-color: #004d00;
+  color: white;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }

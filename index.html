@@ -1,43 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Portal BI</title>
-  <link rel="stylesheet" href="styles.css">
+    <!-- Define el tipo de caracteres (acentos, ñ, etc.) -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página se vea bien en celulares y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Panel de Control CSOL PALTO</title>
+
+    <!-- Ícono de la pestaña -->
+    <link rel="icon" href="https://media-hosting.imagekit.io/...png" type="image/x-icon">
+
+    <style>
+        /* =========================
+           ESTILOS GENERALES
+           ========================= */
+
+        /* Quita márgenes y paddings por defecto */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo general del cuerpo */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            min-height: 100vh;
+            background: #ffffff;
+        }
+
+        /* =========================
+           PANTALLA DE LOGIN
+           ========================= */
+
+        /* Contenedor de la pantalla de login */
+        .login-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+        }
+
+        /* Caja blanca del formulario */
+        .login-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Título del login */
+        .login-form h2 {
+            text-align: center;
+            color: #2B5329;
+            margin-bottom: 30px;
+        }
+
+        /* Campos de usuario y contraseña */
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Botón de login */
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            background: #2B5329;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Efecto hover del botón */
+        .login-form button:hover {
+            background: #1e3b1d;
+        }
+
+        /* Sidebar y contenido ocultos al inicio */
+        .sidebar, .content {
+            display: none;
+        }
+
+        /* Se muestran después del login */
+        .sidebar.show, .content.show {
+            display: block;
+        }
+
+        /* =========================
+           MENÚ LATERAL (SIDEBAR)
+           ========================= */
+
+        .sidebar {
+            width: 220px;
+            background: #E4E2D3;
+            padding: 30px 15px;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+
+        /* Título del menú */
+        .sidebar h1 {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #2B5329;
+        }
+
+        /* Enlaces del menú */
+        .nav-link {
+            padding: 4px 15px;
+            display: flex;
+            cursor: pointer;
+            font-size: 10px;
+            color: #555;
+        }
+
+        /* Hover de los enlaces */
+        .nav-link:hover {
+            background: #F5F4E2;
+            color: #2B5329;
+        }
+
+        /* Enlace activo */
+        .nav-link.active {
+            background-color: #3e5c3a;
+            color: #F5F4E2;
+        }
+
+        /* Contenido central */
+        .content {
+            margin-left: 220px;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        /* Iframe donde se cargan los reportes Power BI */
+        iframe {
+            width: 100%;
+            height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-<body>
+<script>
 
-<div class="container">
+  // ===============================
+  // ABRIR / CERRAR SUBMENÚS
+  // ===============================
+  function toggleSubMenu(element) {
+      const content = element.nextElementSibling;
+      content.style.display = content.style.display === 'none' ? 'block' : 'none';
 
-  <!-- MENÚ LATERAL -->
-  <aside class="sidebar">
-    <h2>PORTAL BI</h2>
+      // Cambia el ícono ▼ / ▶
+      element.textContent = element.textContent.startsWith('▼') ? 
+          element.textContent.replace('▼', '▶') : 
+          element.textContent.replace('▶', '▼');
+  }
 
-    <button class="menu-btn">Control de Gestión</button>
-    <div class="submenu">
-      <a href="#" onclick="mostrarReporte('reporte1')">Costos</a>
-      <a href="#" onclick="mostrarReporte('reporte2')">Indicadores</a>
-    </div>
+  // ===============================
+  // MOSTRAR GALERÍA SEMANA 16
+  // ===============================
+  function showGallerySemana16(element) {
+      // Oculta el reporte Power BI
+      document.getElementById('reportFrame').style.display = 'none';
 
-    <button class="menu-btn">Producción</button>
-    <div class="submenu">
-      <a href="#" onclick="mostrarReporte('reporte3')">Rendimiento</a>
-      <a href="#" onclick="mostrarReporte('reporte4')">Calidad</a>
-    </div>
+      // Oculta todas las galerías
+      document.querySelectorAll('.gallery-container').forEach(gallery => {
+          gallery.style.display = 'none';
+      });
 
-  </aside>
+      // Muestra solo esta galería
+      document.getElementById('gallery-semana16').style.display = 'grid';
 
-  <!-- CONTENIDO -->
-  <main class="content">
-    <h1 id="titulo">Bienvenido</h1>
-    <div id="reporte">
-      <p>Seleccione un reporte del menú</p>
-    </div>
-  </main>
+      // Marca el link como activo
+      document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+      });
+      element.classList.add('active');
+  }
 
-</div>
+  // ===============================
+  // LOGIN DE USUARIOS
+  // ===============================
 
-<script src="script.js"></script>
-</body>
-</html>
+  // Lista de usuarios (solo frontend, NO seguro)
+  const users = [
+    { username: 'saimon', password: 'camposol' },
+    { username: 'cramos', password: '123' },
+    { username: 'maria', password: 'secreta' }
+  ];
 
+  function login(event) {
+    event.preventDefault();
+
+    // Obtiene los valores del formulario
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Busca si el usuario existe
+    const user = users.find(user => 
+        user.username === username && user.password === password
+    );
+
+    if (user) {
+        // Oculta login y muestra sistema
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('sidebar').classList.add('show');
+        document.getElementById('content').classList.add('show');
+    } else {
+        alert('Usuario o contraseña incorrectos');
+    }
+    return false;
+  }
+
+  // ===============================
+  // CARGAR REPORTES POWER BI
+  // ===============================
+  function loadReport(url) {
+      if (url) {
+          const frame = document.getElementById('reportFrame');
+          frame.style.display = 'block';
+          frame.src = url;
+
+          // Oculta galerías
+          document.querySelectorAll('.gallery-container').forEach(gallery => {
+              gallery.style.display = 'none';
+          });
+      }
+  }
+
+</script>
