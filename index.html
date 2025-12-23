@@ -2,28 +2,42 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Nombre de tu Panel BI</title>
+  <title>Portal BI</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header><h1>Panel BI</h1></header>
-  <nav>
-    <ul>
-      <li><a href="#seccion-ventas">Ventas</a></li>
-      <li><a href="#seccion-inventario">Inventario</a></li>
-    </ul>
-  </nav>
 
-  <section id="seccion-ventas">
-    <h2>Reporte de Ventas</h2>
-    <!-- Aquí puedes incrustar un reporte -->
-  </section>
+<div class="container">
 
-  <section id="seccion-inventario">
-    <h2>Reporte de Inventario</h2>
-    <!-- Otro reporte -->
-  </section>
+  <!-- MENÚ LATERAL -->
+  <aside class="sidebar">
+    <h2>PORTAL BI</h2>
 
-  <script src="script.js"></script>
+    <button class="menu-btn">Control de Gestión</button>
+    <div class="submenu">
+      <a href="#" onclick="mostrarReporte('reporte1')">Costos</a>
+      <a href="#" onclick="mostrarReporte('reporte2')">Indicadores</a>
+    </div>
+
+    <button class="menu-btn">Producción</button>
+    <div class="submenu">
+      <a href="#" onclick="mostrarReporte('reporte3')">Rendimiento</a>
+      <a href="#" onclick="mostrarReporte('reporte4')">Calidad</a>
+    </div>
+
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main class="content">
+    <h1 id="titulo">Bienvenido</h1>
+    <div id="reporte">
+      <p>Seleccione un reporte del menú</p>
+    </div>
+  </main>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
+
