@@ -64,9 +64,11 @@
         .sidebar.show, .content.show {
             display: block;
         }
+
+        /* cambiar color del fondo barra de controles izquierda*/
         .sidebar {
             width: 220px;
-            background: #E4E2D3;
+            background: #c8cec9;
             color: #333;
             padding: 30px 15px;
             height: 100vh;
@@ -223,17 +225,17 @@
         <img src="https://www.camposol.com/wp-content/themes/camposol/images/slogan.jpg" alt="Camposol Logo" style="width: 100px; height: auto; margin-bottom: 8px; display: block; margin-left: 15px;">
         <h1>CONTROL DE GESTION - PALTA</h1>
         <div class="nav-section">
-            <div class="nav-section-title">▼ ÁREA CONTROL DE GESTIÓN</div>
+            <div class="nav-section-title">▼ INDICADORES COSTOS</div>
             <div class="nav-section-content">
                 <div class="nav-item">
                     <a class="nav-link" onclick="loadReport('https://app.powerbi.com/view?r=eyJrIjoiNDUwNGE1NzgtOTQ0ZS00NjU3LWI5MjgtNDQ3Zjk0NjNjY2U3IiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9')">
-                    Control de costos palto
+                    Costos OPEX
                     </a>
                 </div>
             </div>
         </div>
         <div class="nav-section">
-            <div class="nav-section-title">▼ FERTIRRIEGO Y NUTRICIÓN</div>
+            <div class="nav-section-title">▼ INDICADORES DE PRODUCCIÓN</div>
             <div class="nav-section-content">
                 <div class="nav-item">
                     <a class="nav-link" onclick="loadReport('https://app.powerbi.com/view?r=eyJrIjoiYzA2MzNjMGMtZWZlNC00NTc1LTgxZDctZjdkNmM3ZWE5MGI3IiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9')">
@@ -273,7 +275,7 @@
             </div>
         </div>
         <div class="nav-section">
-            <div class="nav-section-title">▼ SANIDAD VEGETAL PALTO</div>
+            <div class="nav-section-title">▼ INDICADORES SANIDAD VEGETAL</div>
             <div class="nav-section-content">
                 <div class="nav-item">
                     <a class="nav-link" onclick="loadReport('https://app.powerbi.com/view?r=eyJrIjoiYzcyOWU1NGYtNTUxNS00MTFkLTg2YmYtYmVkMjg1MTRlZWVjIiwidCI6IjQ1YTJmNWYzLWVhMzYtNGEyMi05MGE2LWU3OWQwZmQ1YjRlOSJ9')">
@@ -468,6 +470,7 @@
   const users = [
     { username: 'saimon', password: 'camposol' },
     { username: 'cramos', password: '123' },
+    { username: '', password: '' },
     { username: 'maria', password: 'secreta' }
 ];
 
@@ -523,4 +526,5 @@
 </script>
 </body>
 </html>
+
 
