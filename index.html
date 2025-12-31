@@ -2,9 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Se acopla a webs, celulares o tables -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Control de Gestión Palto</title>
-    <link rel="icon" href="https://media-hosting.imagekit.io/5878685b07814843/Imagen1.png?Expires=1838212599&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=P72~B-8x9Yj5f6PhHPYFRzkRANlTCnVMl5nluQygjwUhZC6lrbcuO23NQ611g59g5KT7dLxMWB0pz8wTw4BsYSNGVPw2GoFBZsQz9n7raL3YxPYCn5ygYMvVU9VEkMfyXdZo~OaIy3ZbqLjLQ7bllHXoVktwpdJr5Lk4L3NZ2a4SXu8C1HHWdUtxHoSgDNAUNINQJ0Xulv~UdyaOjSRr~rACzolhX~LFa~qRCuTgSJg7R1Kt8WEp5qYm6ADm9PbUVml-ByUpVPc7G4jm88YKgquHJZIvdCWcpXlKAa4GdeopBozyEftUhUzSbdI~S8IMoP85aIdclcUpPCp8DuWIbg__" type="image/x-icon">
+    <!-- Aqui se agrega el ícono de la pestaña en google -->
+    <link rel="icon" href="https://ik.imagekit.io/okpu2hw93/LogoCG_ok%20fin.png?updatedAt=1766526534888" type="image/x-icon">
     <style>
         * {
             margin: 0;
@@ -23,7 +25,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url("https://ik.imagekit.io/okpu2hw93/Portada%20CG%202.png");
+            background-image: url("https://ik.imagekit.io/okpu2hw93/Portada%20CG04%20fin.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -189,7 +191,7 @@
             right: 0;
             top: 0;
             bottom: 40px;
-            background-image: url('https://ik.imagekit.io/okpu2hw93/Portada%20CG%200.png');
+            background-image: url('https://ik.imagekit.io/okpu2hw93/Portada%20CG02.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -215,30 +217,109 @@
     </style>
 </head>
 <body>
-    <div id="loginPage" class="login-container">
-        <form class="login-form" onsubmit="return login(event)">
-            <h2>CAMPOSOL - PALTA</h2>
-            <input type="text" id="username" placeholder="Usuario" required>
-            <input type="password" id="password" placeholder="Contraseña" required>
-            <button type="submit">Iniciar Sesión</button>
-        </form>
-    </div>
+    <!-- LOGIN -->
+<div id="loginPage" class="login-container">
+    <form class="login-form" onsubmit="return login(event)">
+        <img src="https://ik.imagekit.io/okpu2hw93/Logo%20Camposol%202.png" alt="Session Logo" style="width: 100px; height: auto; margin-bottom: 8px; display: block; margin-left: 110px;">
+        <h2>Control de Gestión</h2>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Acceder</button>
+        <button type="button" class="microsoft-btn" onclick="loginMicrosoft()">Acceder con Microsoft</button>
+    </form>
+</div>
+
 <!-- Aqui se agrega el logo y configuración de la barra izquierda -->
     <nav class="sidebar" id="sidebar">
         <img src="https://ik.imagekit.io/okpu2hw93/Logo%20Camposol%202.png?updatedAt=1766526534701" alt="Camposol Logo" style="width: 100px; height: auto; margin-bottom: 8px; display: block; margin-left: 40px;">
-        <h1> Control de Gestión </h1>
+        <h1> Operaciones Palto </h1>
+<!-- Aqui se agrega los reportes -->       
         <div class="nav-section">
-            <div class="nav-section-title">▼ INDICADORES COSTOS</div>
+            <div class="nav-section-title">▼ CONTROL DE GESTIÓN</div>
             <div class="nav-section-content">
                 <div class="nav-item">
                     <a class="nav-link" onclick="loadReport('https://app.powerbi.com/view?r=eyJrIjoiMTYwYjZkNzUtMmExMC00MDZmLWEwYWYtOTYwZTRhNTNjZTEyIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9')">
                     Costos OPEX
                     </a>
                 </div>
+                <div class="nav-item">
+                    <a class="nav-link" onclick="loadReport('https://app.powerbi.com/view?r=eyJrIjoiNGEzYTU0OGMtY2U5NS00MzZmLTljOTctZWQyOTE0M2I0NDEzIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9')">
+                    Costos CAPEX
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" onclick="loadReport('https://app.powerbi.com/view?r=eyJrIjoiNGEzYTU0OGMtY2U5NS00MzZmLTljOTctZWQyOTE0M2I0NDEzIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9')">
+                    Costos CIF
+                    </a>
+                </div>
             </div>
         </div>
         <div class="nav-section">
-            <div class="nav-section-title">▼ INDICADORES DE PRODUCCIÓN</div>
+            <div class="nav-section-title">▼ PRODUCCIÓN CAMPO</div>
+            <div class="nav-section-content">
+                <div class="nav-item">
+                    <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiMGFkOWM4MzUtNWZhMC00NzE4LTg4MDktMTAyYzhiOGFmZDI5IiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                    Proyecto Siembra + Biometria, Humedad
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiYmY1NDY3YmYtYjMyMy00NDZmLTk0YzEtNWNjOTVlNTRhZDFhIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                    Datos Humedad
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiYTM0OTQ1NTUtNTUwMC00OTI5LTg4ZDItODU1MWE2YzQzY2U2IiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                    Grados Brix
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiMmU1OGZhZjgtZDYyMi00MThmLWJhYTUtMjQ1ZTE2ZDcwNDVjIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                    Peso Raices
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiNGVkZmIzYjYtNTZiYy00YmQ1LTgxM2ItYjRmMzUxMDhiYzY0IiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                    Yemas Fenologia
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiMzMyMTE3YWEtZjIwNy00MjI3LWI1NmQtNmIxY2UwYzNkMDcxIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                    Caida de Fruta + Pintona
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiMDZiYTFmMDAtNGM1Mi00YzU5LTlmYTAtOTM5MWQwYTFiMDdiIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                      Recojo Fruta
+                      </a>
+                      </div>
+                      <div class="nav-item">
+                      <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiNDgwZTg3NjQtODBhZS00M2Y5LWFiM2MtZDE3ODEzMTZkNGU3IiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                      Desmalezado
+                      </a>
+                      </div>
+                      <div class="nav-item">
+                      <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiYjAxNDFmMzctYWVmYi00OGQ1LThmNjItMTU1OWUwNTVmODZhIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                      Destape Goteros
+                      </a>
+                      </div>
+                      <div class="nav-item">
+                      <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiNDEwOTI3MDEtNTQ2Yy00ZDkwLWE0YTQtMzBkYTY5MDk1Yzc2IiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                      Lavado Mangueras
+                      </a>
+                      </div>
+                      <div class="nav-item">
+                      <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiNjc2N2FmYzItNzgzNS00NjEwLWE3NjYtMTQzN2I3MDViMDMyIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                      Camellones
+                      </a>
+                      </div>
+                      <div class="nav-item">
+                      <a class="nav-link" onclick="loadReport(&#39;https://app.powerbi.com/view?r=eyJrIjoiY2RjYmI3MjgtMmIzZi00NjExLTg4ODktNGY3Njk5MWQ3YTQzIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9&#39;)">
+                      Poda
+                      </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-section">
+            <div class="nav-section-title">▼ FERTIRRIEGO Y NUTRICIÓN</div>
             <div class="nav-section-content">
                 <div class="nav-item">
                     <a class="nav-link" onclick="loadReport('https://app.powerbi.com/view?r=eyJrIjoiYzA2MzNjMGMtZWZlNC00NTc1LTgxZDctZjdkNmM3ZWE5MGI3IiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9')">
@@ -278,7 +359,7 @@
             </div>
         </div>
         <div class="nav-section">
-            <div class="nav-section-title">▼ INDICADORES SANIDAD VEGETAL</div>
+            <div class="nav-section-title">▼ SANIDAD VEGETAL</div>
             <div class="nav-section-content">
                 <div class="nav-item">
                     <a class="nav-link" onclick="loadReport('https://app.powerbi.com/view?r=eyJrIjoiYzcyOWU1NGYtNTUxNS00MTFkLTg2YmYtYmVkMjg1MTRlZWVjIiwidCI6IjQ1YTJmNWYzLWVhMzYtNGEyMi05MGE2LWU3OWQwZmQ1YjRlOSJ9')">
@@ -316,7 +397,7 @@
             </div>
         </div>
         <div class="nav-section">
-            <div class="nav-section-title">▼ PROYECCIONES PCP</div>
+            <div class="nav-section-title">▼ PLANIF. DE LA OFERTA</div>
             <div class="nav-section-content">
                 <div class="nav-item">
                     <a class="nav-link" onclick="loadReport('https://app.powerbi.com/view?r=eyJrIjoiODRiMWFjYmItNzQ5Ni00YjA5LThiYTItZWRmODk5NWM2NDAxIiwidCI6ImM4ODRjYzQyLTViMjEtNDA3Mi04YjdhLWE2M2QwYTZmNWQ3OSIsImMiOjR9')">
@@ -325,7 +406,7 @@
                 </div>
                 <div class="nav-item">
                     <a class="nav-link" onclick="loadReport('')">
-                    Jorgue Angulo
+                    Categorizaciones
                     </a>
                 </div>
                 <div class="nav-item">
@@ -345,176 +426,60 @@
     <div class="gallery-container" id="mi-galeria" style="display: none;">
     </div>
     <iframe id="reportFrame" src="" style="display: none;"></iframe>
-    <div id="gallery-semana16" class="gallery-container" style="display:none;">
-        <div class="gallery-item"><img src="https://i.postimg.cc/mD2zpNFZ/agromas16.png" alt="Imagen 1"></div>
-        <div class="gallery-item"><img src="https://i.postimg.cc/XvgBgDqD/frusol16.png" alt="Imagen 2"></div>
-        <div class="gallery-item"><img src="https://i.postimg.cc/mr4FCGLH/marverde16.png" alt="Imagen 3"></div>
-        <div class="gallery-item"><img src="https://i.postimg.cc/NfWXGHZb/minka-16.png" alt="Imagen 4"></div>
-        <div class="gallery-item"><img src="https://i.postimg.cc/fRm9VbNs/sincromas16.png" alt="Imagen 5"></div>
-        <div class="gallery-item"><img src="https://i.postimg.cc/TYymX9Np/terra16.png" alt="Imagen 6"></div>
-    </div>
-    <div id="gallery-saimon" class="gallery-container" style="display:none;">
-        <!-- Add image elements here for Saimon gallery -->
-        <div class="gallery-item"><img src=" " alt="Saimon Image 1"></div>
-        <div class="gallery-item"><img src=" " alt="Saimon Image 2"></div>
-        <div class="gallery-item"><img src=" " alt="Saimon Image 3"></div>
-        <div class="gallery-item"><img src=" " alt="Saimon Image 4"></div>
-        <div class="gallery-item"><img src=" " alt="Saimon Image 5"></div>
-        <div class="gallery-item"><img src=" " alt="Saimon Image 6"></div>
-
-    </div>
-
     </main>
   <footer style="position: fixed; bottom: 0; right: 0; padding: 10px; background-color: rgba(255, 255, 255, 0.9); font-size: 12px; color: #666; text-align: right; width: 100%; border-top: 1px solid #eee;">
     © Control de Gestión Palto - 2025 | All Rights Reserved | Data Protection Policy | Terms & Conditions
   </footer>
 
 <script>
-  function toggleSubMenu(element) {
-      const content = element.nextElementSibling;
-      content.style.display = content.style.display === 'none' ? 'block' : 'none';
-      element.textContent = element.textContent.startsWith('▼') ? 
-          element.textContent.replace('▼', '▶') : 
-          element.textContent.replace('▶', '▼');
-  }
+  /* ---------- CONFIG ---------- */
+const MASTER_PASSWORD = "camposol2025";
 
-  function showGallery(element) {
-      document.getElementById('reportFrame').style.display = 'none';
-      document.querySelectorAll('.gallery-container').forEach(gallery => {
-          gallery.style.display = 'none';
-      });
-      document.getElementById('gallery-semana13').style.display = 'grid';
+/* ---------- SESSION ---------- */
+if(sessionStorage.getItem("auth")==="true"){
+    showApp();
+}
 
-      document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
-      });
-      element.classList.add('active');
-  }
-
-  function showGallerySemana16(element) {
-      document.getElementById('reportFrame').style.display = 'none';
-      document.querySelectorAll('.gallery-container').forEach(gallery => {
-          gallery.style.display = 'none';
-      });
-      document.getElementById('gallery-semana16').style.display = 'grid';
-
-      document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
-      });
-      element.classList.add('active');
-  }
-
-  function showGallerySaimon(element) {
-      document.getElementById('reportFrame').style.display = 'none';
-      document.querySelectorAll('.gallery-container').forEach(gallery => {
-          gallery.style.display = 'none';
-      });
-      document.getElementById('gallery-saimon').style.display = 'grid';
-
-      document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
-      });
-      element.classList.add('active');
-  }
-
-
-  async function uploadImage(element) {
-      const url = prompt('Ingrese la URL de la imagen:');
-      if (url) {
-          const img = document.createElement('img');
-          img.src = url;
-          element.innerHTML = '';
-          element.appendChild(img);
-
-          const galleryId = element.closest('.gallery-container').id || 'main-gallery';
-          const index = Array.from(element.parentNode.children).indexOf(element);
-          localStorage.setItem(`${galleryId}-image-${index}`, url);
-      }
-  }
-
-  function loadSavedImages() {
-      const mainGalleryItems = document.querySelectorAll('.content > .gallery-container > .gallery-item');
-      mainGalleryItems.forEach((item, index) => {
-          const savedImage = localStorage.getItem(`main-gallery-image-${index}`);
-          if (savedImage) {
-              const img = document.createElement('img');
-              img.src = savedImage;
-              item.innerHTML = '';
-              item.appendChild(img);
-          }
-      });
-
-      const semana13Items = document.querySelectorAll('#gallery-semana13 .gallery-item');
-      semana13Items.forEach((item, index) => {
-          const savedImage = localStorage.getItem(`gallery-semana13-image-${index}`);
-          if (savedImage) {
-              const img = document.createElement('img');
-              img.src = savedImage;
-              item.innerHTML = '';
-              item.appendChild(img);
-          }
-      });
-  }
-
-  document.addEventListener('DOMContentLoaded', loadSavedImages);
-
-  const users = [
-    { username: 'saimon', password: 'camposol' },
-    { username: 'cramos', password: '123' },
-    { username: '', password: '' },
-    { username: 'maria', password: 'secreta' }
-];
-
-  function login(event) {
-    event.preventDefault();
-    
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    // Buscar si el usuario y contraseña coinciden con alguno en la lista de usuarios
-    const user = users.find(user => user.username === username && user.password === password);
-
-    if (user) {
-        // Si se encuentra un usuario válido, ocultamos la página de login y mostramos el contenido
-        document.getElementById('loginPage').style.display = 'none';
-        document.getElementById('sidebar').classList.add('show');
-        document.getElementById('content').classList.add('show');
-    } else {
-        // Si no se encuentra, mostramos un mensaje de error
-        alert('Usuario o contraseña incorrectos');
+/* ---------- LOGIN ---------- */
+function login(e){
+    e.preventDefault();
+    const pass = document.getElementById("password").value;
+    if(pass===MASTER_PASSWORD){
+        sessionStorage.setItem("auth","true");
+        showApp();
+    }else{
+        alert("Contraseña incorrecta");
     }
-      return false;
-  }
+}
 
-  function loadReport(url) {
-      if (url) {
-          document.getElementById('reportFrame').style.display = 'block';
-          document.getElementById('reportFrame').src = url;
-          document.querySelectorAll('.gallery-container').forEach(gallery => {
-              gallery.style.display = 'none';
-          });
-          document.querySelectorAll('.nav-link').forEach(link => {
-              link.classList.remove('active');
-          });
-          event.currentTarget.classList.add('active');
-      }
-  }
+/* ---------- MICROSOFT LOGIN (placeholder real) ---------- */
+function loginMicrosoft(){
+    alert("Aquí se integra Azure Entra ID.\nRequiere Tenant y App Registration.");
+    // window.location.href = "https://login.microsoftonline.com/...";
+}
 
-  document.addEventListener('DOMContentLoaded', function() {
-      const sections = document.querySelectorAll('.nav-section');
-      sections.forEach(section => {
-          const title = section.querySelector('.nav-section-title');
-          if (title) {
-              title.addEventListener('click', () => {
-                  section.classList.toggle('active');
-                  title.textContent = title.textContent.startsWith('▼') ? 
-                      title.textContent.replace('▼', '▶') : 
-                      title.textContent.replace('▶', '▼');
-              });
-          }
-      });
-  });
+/* ---------- SHOW APP ---------- */
+function showApp(){
+    document.getElementById("loginPage").style.display="none";
+    document.getElementById("sidebar").classList.add("show");
+    document.getElementById("content").classList.add("show");
+}
+
+/* ---------- REPORT ---------- */
+function loadReport(url){
+    const iframe=document.getElementById("reportFrame");
+    iframe.src=url;
+    iframe.style.display="block";
+}
+
+/* ---------- MENU ---------- */
+document.querySelectorAll(".nav-section-title").forEach(t=>{
+    t.addEventListener("click",()=>{
+        t.parentElement.classList.toggle("active");
+    });
+});
 </script>
+
 </body>
 </html>
 
